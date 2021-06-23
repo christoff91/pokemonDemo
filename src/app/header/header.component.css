@@ -1,0 +1,17 @@
+/* Header */
+header {
+  padding: 20px 10px;
+  text-align: left;
+  background: linear-gradient(
+    90deg,
+    rgb(8, 2, 116) 0%,
+    rgba(9, 9, 121, 1) 51%,
+    rgb(36, 162, 187) 100%
+  );
+}
+
+header h1 {
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 3px;
+}

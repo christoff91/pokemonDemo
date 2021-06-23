@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* BASE */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(8, 2, 116) 0%,
+    rgba(9, 9, 121, 1) 51%,
+    rgb(36, 162, 187) 100%
+  );
+}

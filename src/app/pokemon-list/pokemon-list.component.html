@@ -1,0 +1,42 @@
+<!-- Pagination -->
+<pagination-controls
+  (pageChange)="page = $event; pokemons = []; getPokemons()"
+></pagination-controls>
+
+<!-- Pokemon grid -->
+<div class="pokemon-grid">
+  <div
+    class="box"
+    [ngStyle]="{ 'border-color:': status == true ? '#ff0000' : '#ffffff' }"
+    *ngFor="
+      let pokemon of pokemons
+        | paginate
+          : { itemsPerPage: 30, currentPage: page, totalItems: totalPokemons }
+    "
+    (click)="viewPokemon($event)"
+  >
+    <img [src]="pokemon.sprites.front_default" alt="Pokemon" />
+    <h4>{{ pokemon.name }}</h4>
+    <!-- <p><b>Type:</b> {{ pokemon.types[0].type.name }}</p>
+    <p><b>Height:</b> {{ pokemon.height }}</p>
+    <p><b>Health:</b> {{ pokemon.stats[0].base_stat }}</p>
+    <p><b>Attack Power:</b> {{ pokemon.stats[1].base_stat }}</p>
+    <p><b>Defense:</b> {{ pokemon.stats[2].base_stat }}</p> -->
+  </div>
+</div>
+
+<div class="detailed">
+  <div class="selected-box" *ngFor="let pokeDetail of pokemonDetails">
+    <img [src]="pokeDetail.sprites.front_default" alt="Pokemon" />
+    <h4>{{ pokeDetail.name }}</h4>
+    <p>Weight: {{ pokeDetail.weight }} lB</p>
+    <p>Type: {{ pokeDetail.types[0].type.name }}</p>
+    <p>Height: {{ pokeDetail.height }} "</p>
+    <p>Health: {{ pokeDetail.stats[0].base_stat }}</p>
+    <p>Attack Power: {{ pokeDetail.stats[1].base_stat }}</p>
+    <p>Defense: {{ pokeDetail.stats[2].base_stat }}</p>
+    <p>Speed: {{ pokeDetail.stats[5].base_stat }}</p>
+  </div>
+</div>
+
+<!-- [ngStyle]="{'border-color:': (status == true) ? '#ff0000' : '#ffffff'}" -->
